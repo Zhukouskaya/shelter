@@ -49,10 +49,10 @@ function getContent() {
 }
 
 function countPage(width) {
-  if (width === 1279) {
+  if (width < 1279 &  width > 768) {
     return 6
   }
-  else if (width === 767) {
+  else if (width <= 767 &  width > 450) {
     return 8
   }
   else {
@@ -61,10 +61,11 @@ function countPage(width) {
 }
 
 function countCard(width) {
-  if (width === 1279) {
+  console.log('countCard' + width)
+  if (width < 1279 &  width > 768){
     return 8
   }
-  else if (width === 767) {
+  else if (width <= 767 &  width > 450) {
     return 6
   }
   else {
@@ -102,9 +103,7 @@ function STATEpreviousPage() {
   if (STATEhasPreviousPage()) {
     pagination.currentPage -= 1;
   } else {
-    throw new Error(
-      `Previous page is not allowed at ${pagination.currentPage}`
-    );
+    throw new Error(`Previous page is not allowed at ${pagination.currentPage}`);
   }
 }
 
